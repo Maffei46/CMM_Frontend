@@ -1,0 +1,52 @@
+<div id="versionEdit">
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <h1 class="sectionTitle">TECHNOLOGY VERSION EDIT</h1>
+    <form [formGroup]="editForm" (ngSubmit)="edit()">
+        <div class="input">
+            <div class="label">CATEGORY</div>
+        
+            <select formControlName="category" required [(ngModel)]="technology.category">
+                <option value="Application Server">Application Server</option>
+                <option value="RDBMS">RDBMS</option>
+                <option value="JDBCOtherServer">JDBCOtherServer</option>
+                <option value="Browser">Browser</option>
+                <option value="MSOffice">MSOffice</option>
+                <option value="OtherClient">OtherClient</option>
+            </select>
+        </div>
+
+        <div class="input">
+            <div class="label">TECHNOLOGY</div>
+            <select formControlName="technology" required [(ngModel)]="technologyVersion.technology">
+                <option [value]="technology._id">{{technology.name}}
+                </option>
+            </select>
+        </div>
+
+        <div class="input">
+            <div class="label">NAME *</div>
+            <input type="text" formControlName="name" required>
+        </div>
+
+        <div class="input">
+            <div class="label">EOD</div>
+            <input type="date" formControlName="EOD" [(ngModel)]="technologyVersion.EOD">
+        </div>
+
+        <div class="input">
+            <div class="label">ORDER *</div>
+            <input type="number" formControlName="order" [(ngModel)]="technologyVersion.order" required>
+        </div>
+
+        <div class="input">
+            <div class="label">URL</div>
+            <input type="text" formControlName="url" [(ngModel)]="technologyVersion.url">
+        </div>
+
+        <div class="input">
+            <div class="label">NOTE</div>
+            <textarea formControlName="note" [(ngModel)]="technologyVersion.note"></textarea>
+        </div>
+        <button type="submit" class="submit">ADD</button>
+    </form>
+</div>

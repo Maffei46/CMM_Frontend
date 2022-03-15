@@ -1,0 +1,94 @@
+$inputsMB: 20px;
+.input {
+  position: relative;
+  .label {
+    position: absolute;
+    top: -18px;
+    left: 10px;
+    color: var(--mainColor);
+    font-weight: 700;
+  }
+  input {
+    background-color: var(--mainColor);
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    color: var(--mainColorTXT);
+    padding: 10px 20px;
+    font-size: 17pt;
+    margin-bottom: $inputsMB;
+    &:focus-visible {
+      outline-offset: 0px;
+    }
+  }
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    background-color: var(--mainColor);
+    border: none;
+    border-radius: 15px;
+    color: var(--mainColorTXT);
+    padding: 10px 20px;
+    margin-bottom: $inputsMB;
+  }
+  select {
+    background-color: var(--mainColor);
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    color: var(--mainColorTXT);
+    padding: 10px 20px;
+    font-size: 17pt;
+    margin-bottom: $inputsMB;
+  }
+  input[type="checkbox"] {
+    width: 1.65em;
+    height: 1.65em;
+    transition: 120ms transform ease-in-out;
+    border: 2px solid var(--mainColor);
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+}
+.checkbox {
+  display: flex;
+  .name {
+    font-size: 15pt;
+    font-weight: 600;
+    color: var(--mainColor);
+    padding-left: 5px;
+    padding-top: 3px;
+  }
+}
+.submit {
+  background-color: var(--mainColor);
+  color: var(--mainColorTXT);
+  width: 100%;
+  padding: 5px 20px;
+  font-size: 17pt;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition-duration: var(--transDurationBase);
+  &:hover {
+    background-color: var(--mainColorHover);
+    transition-duration: var(--transDurationBase);
+  }
+}
+.deleteBtn {
+  background-color: var(--deleteColor);
+  color: var(--mainColorTXT);
+  width: 100%;
+  max-width: 200px;
+  padding: 2px 10px;
+  font-size: 12pt;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition-duration: var(--transDurationBase);
+  &:hover {
+    background-color: var(--deleteColorHover);
+    transition-duration: var(--transDurationBase);
+  }
+}

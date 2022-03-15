@@ -1,0 +1,12 @@
+#versionAdd {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  position: relative;
+  form {
+    margin-top: 20px;
+  }
+}

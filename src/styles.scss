@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files */
+
+//POPPINS FONT
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --sidebarWidth: 300px;
+  --mainColor: rgb(49, 49, 194);
+  --mainColorHover: rgb(28, 28, 133);
+  --mainColorTXT: white;
+  --transDurationBase: 0.2s;
+  --addColor: rgb(32, 143, 32);
+  --addColorHover: rgb(20, 88, 20);
+  --addTXTColor: white;
+  --deleteColor: red;
+  --deleteColorHover: rgb(189, 33, 33);
+}
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+.sectionTitle {
+  color: var(--mainColor);
+}
+@import "./assets/inputs.scss";
+
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid var(--mainColor);
+  border-color: var(--mainColor) transparent var(--mainColor) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

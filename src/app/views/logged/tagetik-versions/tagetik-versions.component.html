@@ -1,0 +1,22 @@
+
+
+<div id="tagetikVersions">
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <h1 class="sectionTitle">TAGETIK VERSIONS</h1>
+    <div class="buttons">
+        <a routerLink="/reserved/tagetik_versions/add"> ADD VERSION </a>    
+    </div>
+    
+    <div class="versions" *ngIf="isFetched()">
+        <div class="top">
+            <div class="field name">NAME</div>
+            <div class="field ga_date">GA_Date</div>
+            <div class="field note">NOTE</div>
+        </div>
+        <div [ngClass]="{'current' : version.current}" class="version" *ngFor="let version of tagetikVersions()" [routerLink]="'/reserved/tagetik_versions/edit/'+version._id">
+            <div class="field name">{{version.name}}</div>
+            <div class="field ga_date">{{convertDate(version.GA_date)}}</div>
+            <div class="field note">{{version.note}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+
+<div id="sidebar">
+    <ul class="menu">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> <a routerLink="/"> CMM </a> </li>
+        <li routerLinkActive="active" *ngIf="!isLogged()" [routerLinkActiveOptions]="{ exact: true }"> <a routerLink="/login"> Login </a> </li>
+        <li routerLinkActive="active" *ngIf="isLogged()"> <a routerLink="/reserved/current"> Current </a> </li>
+        <li routerLinkActive="active" *ngIf="isLogged()"> <a routerLink="/reserved/technologies"> Technologies </a> </li>
+        <li routerLinkActive="active" *ngIf="isLogged()"> <a routerLink="/reserved/tagetik_versions"> Tagetik Versions </a> </li>
+        <li routerLinkActive="active" *ngIf="isLogged()" [routerLinkActiveOptions]="{ exact: true }"> <a routerLink="/reserved/exports"> Exports </a> </li>
+    </ul>
+
+    <div class="logged" *ngIf="isLogged()">
+        <div class="name">{{loggedAs()}}</div>
+        <button (click)="logout()">LOGOUT</button>
+    </div>
+
+    <div class="credits">© 2022 Wolters Kluwer N.V.e/o sue consociate. Tutti i diritti riservati.</div>
+</div>

@@ -1,0 +1,27 @@
+<div id="technology_add">
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <h1 class="sectionTitle">TECHNOLOGY ADD</h1>
+    <form [formGroup]="addForm" (ngSubmit)="add()">
+        <div class="input">
+            <div class="label">NAME *</div>
+            <input type="text" formControlName="name" required>
+        </div>
+        <div class="input">
+            <div class="label">CATEGORY *</div>
+            <select formControlName="category">
+                <option value="Application Server">Application Server</option>
+                <option value="RDBMS">RDBMS</option>
+                <option value="JDBCOtherServer">JDBCOtherServer</option>
+                <option value="Browser">Browser</option>
+                <option value="MSOffice">MSOffice</option>
+                <option value="OtherClient">OtherClient</option>
+            </select>    
+        </div>
+        
+        <div class="input">
+            <div class="label">NOTE</div>
+            <textarea formControlName="note"></textarea>
+        </div>
+        <button type="submit" class="submit">ADD</button>
+    </form>
+</div>

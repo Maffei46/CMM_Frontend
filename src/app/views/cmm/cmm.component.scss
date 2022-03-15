@@ -1,0 +1,12 @@
+#cmm{
+    width: 100%;
+    min-height: 100vh;
+    font-size: 10pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .text{
+        max-width: 700px;
+        text-align: justify;
+    }
+}

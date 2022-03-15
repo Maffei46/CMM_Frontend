@@ -1,0 +1,45 @@
+<div id="technology">
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <h1 class="sectionTitle">TECHNOLOGIES</h1>
+    <div class="select">
+        <div class="input">
+            <div class="label">CATEGORY</div>
+        
+            <select (change)="column1Changed()" [(ngModel)]="categorySelected">
+                <option value="Application Server">Application Server</option>
+                <option value="RDBMS">RDBMS</option>
+                <option value="JDBCOtherServer">JDBCOtherServer</option>
+                <option value="Browser">Browser</option>
+                <option value="MSOffice">MSOffice</option>
+                <option value="OtherClient">OtherClient</option>
+            </select>
+        </div>
+        <div class="input">
+            <div class="label">TECHNOLOGY</div>
+            <select (change)="column2Changed()" [(ngModel)]="technologySelected">
+                <option *ngFor="let o of selectable; let i = index" [value]="i">
+                    {{o.name}}
+                </option>
+            </select>
+        </div>
+        <div routerLink="/reserved/technologies/add" class="add"><span>+</span></div>
+    </div>
+    <div class="versions" *ngIf="selectedTechnology">
+        <div class="buttons" >
+            <a routerLink="/reserved/technologies/versions/add" class="addBtn"> ADD VERSION </a>
+            <a [routerLink]="'/reserved/technologies/edit/'+selectedTechnology._id" class="editBtn"> EDIT TECHNLOGY </a>
+        </div>
+        <div class="top">
+            <div class="field name">NAME</div>
+            <div class="field eod">EOD</div>
+            <div class="field note">NOTE</div>
+        </div>
+        <div class="data">
+            <div class="version" *ngFor="let v of versions; let i = index" [routerLink]="'/reserved/technologies/'+selectedTechnology._id+'/edit/'+v._id">
+                <div class="field name">{{v.name}}</div>
+                <div class="field eod">{{v.EOD}}</div>
+                <div class="field note">{{v.note}}</div>
+            </div>
+        </div>
+    </div>
+</div>

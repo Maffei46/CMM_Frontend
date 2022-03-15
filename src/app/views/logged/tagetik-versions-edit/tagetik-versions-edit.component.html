@@ -1,0 +1,27 @@
+<div id="edit">
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <h1 class="sectionTitle">TAGETIK VERSIONS EDIT</h1>
+    <form *ngIf="tagetikVersion!=null" [formGroup]="editForm" (ngSubmit)="edit()">
+
+        <input type="text" [(ngModel)]="tagetikVersion._id" formControlName="_id" style="display: none;">
+
+        <div class="input">
+            <div class="label">NAME</div>
+            <input type="text" [(ngModel)]="tagetikVersion.name" formControlName="name">
+        </div>
+        <div class="input">
+            <div class="label">GA_DATE</div>
+            <input type="date" [(ngModel)]="tagetikVersion.GA_date" formControlName="GA_date">
+        </div>
+        <div class="input checkbox">
+            <input type="checkbox" [(ngModel)]="tagetikVersion.current" formControlName="current">
+            <div class="name">Current</div>
+        </div>
+        <div class="input">
+            <div class="label">NOTE</div>
+            <textarea formControlName="note" [(ngModel)]="tagetikVersion.note"> </textarea>
+        </div>
+        <button type="submit" class="submit">EDIT</button>
+    </form>    
+    <button class="deleteBtn" (click)="deleteF(tagetikVersion._id)">DELETE</button>
+</div>

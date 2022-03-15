@@ -1,0 +1,28 @@
+<div id="technology_edit">
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <h1 class="sectionTitle">TECHNOLOGY EDIT</h1>
+    <form [formGroup]="editForm" (ngSubmit)="edit()" *ngIf="technology">
+        <input type="text" formControlName="_id" [(ngModel)]="technology._id" required style="display: none;">
+        <div class="input">
+            <div class="label">NAME *</div>
+            <input type="text" formControlName="name" [(ngModel)]="technology.name" required>
+        </div>
+        <div class="input">
+            <div class="label">CATEGORY *</div>
+            <select formControlName="category" [(ngModel)]="technology.category">
+                <option value="Application Server">Application Server</option>
+                <option value="RDBMS">RDBMS</option>
+                <option value="JDBCOtherServer">JDBCOtherServer</option>
+                <option value="Browser">Browser</option>
+                <option value="MSOffice">MSOffice</option>
+                <option value="OtherClient">OtherClient</option>
+            </select>    
+        </div>
+        
+        <div class="input">
+            <div class="label">NOTE</div>
+            <textarea formControlName="note" [(ngModel)]="technology.note"></textarea>
+        </div>
+        <button type="submit" class="submit">EDIT</button>
+    </form>
+</div>

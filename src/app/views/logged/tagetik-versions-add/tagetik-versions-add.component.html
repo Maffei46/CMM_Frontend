@@ -1,0 +1,20 @@
+<div id="add">
+    <h1 class="sectionTitle">TAGETIK VERSIONS ADD</h1>
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <form [formGroup]="addForm" (ngSubmit)="add()">
+        <div class="input">
+            <div class="label">NAME *</div>
+            <input type="text" formControlName="name" required>
+        </div>
+        <div class="input">
+            <div class="label">GA_Date</div>
+            <input type="date" formControlName="GA_date">
+        </div>
+        <div class="input">
+            <div class="label">NOTE</div>
+            <textarea formControlName="note"></textarea>
+        </div>
+        <button type="submit" class="submit">ADD</button>
+    </form>    
+</div>
+

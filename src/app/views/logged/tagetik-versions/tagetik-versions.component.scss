@@ -1,0 +1,76 @@
+#tagetikVersions {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  position: relative;
+  .buttons {
+    width: 700px;
+    margin-bottom: 20px;
+    a {
+      background-color: var(--addColor);
+      color: var(--addTXTColor);
+      border-radius: 10px;
+      padding: 5px 20px;
+      &:hover {
+        background-color: var(--addColorHover);
+      }
+    }
+  }
+  .versions {
+    .top {
+      display: flex;
+      .field {
+        border-bottom: 3px solid var(--mainColor);
+        border-right: 1px solid var(--mainColor);
+        padding: 5px 10px;
+        text-align: center;
+        font-weight: 600;
+      }
+      .name {
+        width: 150px;
+      }
+      .ga_date {
+        width: 150px;
+      }
+      .note {
+        width: 400px;
+      }
+    }
+    .version {
+      display: flex;
+      transition-duration: var(--transDurationBase);
+      &:hover {
+        background-color: rgb(206, 206, 206);
+        cursor: pointer;
+        transition-duration: var(--transDurationBase);
+      }
+      .field {
+        border-right: 1px solid var(--mainColor);
+        border-bottom: 1px solid var(--mainColor);
+        padding: 5px 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .name {
+        width: 150px;
+      }
+      .ga_date {
+        width: 150px;
+      }
+      .note {
+        width: 400px;
+      }
+    }
+    .current {
+      background-color: rgb(253, 253, 192);
+      &:hover {
+        background-color: rgb(206, 206, 156);
+      }
+    }
+  }
+}
