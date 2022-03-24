@@ -38,12 +38,8 @@ export class TagetikVersionsEditComponent implements OnInit {
         .then((res: TagetikVersion) => {
           this.loading = false;
           this.tagetikVersion = res;
-          // this.tagetikVersion.GA_date = new Date(
-          //   this.tagetikVersion.GA_date
-          // ).toLocaleDateString();
-          console.log(
-            new Date(this.tagetikVersion.GA_date).toLocaleDateString()
-          );
+          this.tagetikVersion.GA_date = this.tagetikVersion.GA_date.split('T')[0];
+          console.log(this.tagetikVersion.GA_date.split('T'));
         });
     });
   }

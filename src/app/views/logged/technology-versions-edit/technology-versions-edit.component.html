@@ -1,7 +1,7 @@
 <div id="versionEdit">
     <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
     <h1 class="sectionTitle">TECHNOLOGY VERSION EDIT</h1>
-    <form [formGroup]="editForm" (ngSubmit)="edit()">
+    <form [formGroup]="editForm" (ngSubmit)="edit()" *ngIf="!loading">
         <div class="input">
             <div class="label">CATEGORY</div>
         
@@ -25,7 +25,7 @@
 
         <div class="input">
             <div class="label">NAME *</div>
-            <input type="text" formControlName="name" required>
+            <input type="text" formControlName="name" [(ngModel)]="technologyVersion.name" required>
         </div>
 
         <div class="input">

@@ -1,1 +1,25 @@
-<p>current works!</p>
+<div id="current">
+    <div class="loading" *ngIf="loading"><div class="lds-dual-ring"></div></div>
+    <h1 class="sectionTitle">CURRENT</h1>
+    <div class="table">
+        <div class="tagetikVersions">
+            <div class="version">
+                <div class="versionName">*</div>
+                <div class="technologies">
+                    <div class="technology nameTech" *ngFor="let technology of technologies">
+                        {{technology.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="version" [ngClass]="{'current' : version.current}" class="version" *ngFor="let version of tagetikVersions()">
+                <div class="versionName">{{version.name}}</div>
+                <div class="technologies">
+                    <div class="technology" *ngFor="let technology of technologies">
+                        <input type="checkbox" name="" id="">
+                    </div>    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

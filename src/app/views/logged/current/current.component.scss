@@ -1,0 +1,36 @@
+#current {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+}
+
+.table{
+    .tagetikVersions{
+        display: flex;
+        .version{
+            width: 100px;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+}
+.versionName{
+    border-bottom: 3px solid var(--mainColor);
+    border-right: 2px solid var(--mainColor);
+}
+.technology{
+    height: 40px;
+    display: flex;
+    justify-content: center;align-items: center;
+    padding: 0px 10px;
+    border-bottom: 2px solid var(--mainColor);
+    border-right: 2px solid var(--mainColor);
+}
+.nameTech{
+    font-size: 9pt;
+    line-height: 10px;
+}

@@ -44,8 +44,8 @@ export class TechnologyVersionsEditComponent implements OnInit {
         .then((res: { technology: Technology; version: TechnologyVersion }) => {
           this.technologyVersion = res.version;
           this.technology = res.technology;
-          console.log(this.technologyVersion);
           this.loading = false;
+          console.log(this.technologyVersion)
         });
     });
   }
