@@ -10,6 +10,8 @@ export class TagetikVersionService {
   tagetikVersions: TagetikVersion[] = [];
   fetched: boolean = false;
   public editingVersion: TagetikVersion;
+  SERVER_TEMP: string = "https://4yf94bnqyg.execute-api.eu-west-1.amazonaws.com/CMM"
+
   constructor(private http: HttpClient, private route: Router) {}
   fetchAsync() {
     const requestOptions = {
@@ -18,7 +20,7 @@ export class TagetikVersionService {
       }),
     };
     return this.http.get(
-      environment.Server + '/tagetik_versions/getAll',
+      this.SERVER_TEMP + '/tagetik_versions',
       requestOptions
     );
   }
@@ -26,6 +28,7 @@ export class TagetikVersionService {
   fetch() {
     return new Promise((resolve) => {
       this.fetchAsync().subscribe((result: TagetikVersion[]) => {
+        console.log(result);
         this.tagetikVersions = result;
         this.fetched = true;
         return resolve(result);
